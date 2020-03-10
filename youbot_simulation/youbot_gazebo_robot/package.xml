@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<package>
+  <name>youbot_gazebo_robot</name>
+  <version>0.1.1</version>
+  <description>Launch the KUKA youBot in the Gazebo simulation</description>
+
+  <maintainer email="texnoman@itmo.ru">Texno Man</maintainer>
+
+  <license>GPLv3</license>
+
+  <author email="texnoman@itmo.ru">Texno Man</author>
+
+  <buildtool_depend>catkin</buildtool_depend>
+
+  <run_depend>gazebo_ros</run_depend>
+  <run_depend>youbot_gazebo_worlds</run_depend>
+  <run_depend>youbot_gazebo_control</run_depend>
+  <run_depend>robot_state_publisher</run_depend>
+
+  <test_depend>roslaunch</test_depend>
+
+</package>

@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<package>
+  <name>youbot_gazebo_worlds</name>
+  <version>0.0.1</version>
+  <description>Gazebo worlds configurations</description>
+
+  <maintainer email="texnoman@itmo.ru">Texno Man</maintainer>
+
+  <license>GPLv3</license>
+
+  <author email="texnoman@itmo.ru">Texno Man</author>
+
+  <buildtool_depend>catkin</buildtool_depend>
+
+  <run_depend>gazebo_ros</run_depend>
+
+  <test_depend>roslaunch</test_depend>
+
+</package>
