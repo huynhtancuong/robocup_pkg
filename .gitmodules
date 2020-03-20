@@ -10,3 +10,6 @@
 	path = youbot_driver_ros_interface
 	url = git@github.com:youbot/youbot_driver_ros_interface.git
 	branch = indigo-devel
+[submodule "youbot_nav"]
+	path = youbot_nav
+	url = git@github.com:TexnoMann/youbot_nav.git
