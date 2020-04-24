@@ -13,3 +13,6 @@
 [submodule "youbot_nav"]
 	path = youbot_nav
 	url = git@github.com:TexnoMann/youbot_nav.git
+[submodule "robotics_math"]
+	path = robotics_math
+	url = git@github.com:TexnoMann/robotics_math.git
