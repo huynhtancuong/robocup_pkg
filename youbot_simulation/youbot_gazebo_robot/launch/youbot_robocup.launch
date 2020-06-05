@@ -3,8 +3,8 @@
 
   <arg name="robot" default="youbot"/>
   <arg name="world" default="robocup"/>
-  <arg name="init_pos_x" default="0.0"/>
-  <arg name="init_pos_y" default="0.0"/>
+  <arg name="init_pos_x" default="-3.0"/>
+  <arg name="init_pos_y" default="1.0"/>
   <arg name="init_pos_z" default="0.1"/>
 
   <!-- launch world -->
@@ -37,5 +37,6 @@
   </node>
 
   <node type="rviz" name="rviz" pkg="rviz" args="-d $(find youbot_gazebo_robot)/rviz/config.rviz" />
+<!--  <node name="nav_node_test1" pkg="youbot_nav" type="test_nav1.sh" />-->
 
 </launch>
