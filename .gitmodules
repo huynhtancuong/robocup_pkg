@@ -2,10 +2,6 @@
 	path = youbot_driver
 	url = git@github.com:youbot/youbot_driver.git
 	branch = hydro-devel
-[submodule "youbot_description"]
-	path = youbot_description
-	url = git@github.com:mas-group/youbot_description.git
-	branch = kinetic-devel
 [submodule "youbot_driver_ros_interface"]
 	path = youbot_driver_ros_interface
 	url = git@github.com:youbot/youbot_driver_ros_interface.git
@@ -16,3 +12,9 @@
 [submodule "robotics_math"]
 	path = robotics_math
 	url = git@github.com:TexnoMann/robotics_math.git
+[submodule "youbot_description"]
+	path = youbot_description
+	url = git@github.com:TexnoMann/youbot_description.git
+[submodule "rf2o_laser_odometry"]
+	path = rf2o_laser_odometry
+	url = git@github.com:MAPIRlab/rf2o_laser_odometry.git
