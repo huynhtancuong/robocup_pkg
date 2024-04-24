@@ -1,7 +1,7 @@
 [submodule "youbot_driver"]
 	path = youbot_driver
-	url = git@github.com:youbot/youbot_driver.git
-	branch = hydro-devel
+	url = git@github.com:huynhtancuong/youbot_driver.git
+	branch = intel-nuc-devel
 [submodule "youbot_driver_ros_interface"]
 	path = youbot_driver_ros_interface
 	url = git@github.com:huynhtancuong/youbot_driver_ros_interface.git
@@ -19,3 +19,10 @@
 [submodule "rf2o_laser_odometry"]
 	path = rf2o_laser_odometry
 	url = git@github.com:MAPIRlab/rf2o_laser_odometry.git
+[submodule "brics_actuator"]
+	path = brics_actuator
+	url = https://github.com/wnowak/brics_actuator.git
+[submodule "angles"]
+	path = angles
+	url = https://github.com/ros/angles.git
+	branch = master
