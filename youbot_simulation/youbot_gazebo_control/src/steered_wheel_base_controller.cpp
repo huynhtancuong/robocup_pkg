@@ -690,6 +690,7 @@ namespace steered_wheel_base_controller{
 class SteeredWheelBaseController : public controller_interface::ControllerBase
 {
 public:
+    // enum State { CONSTRUCTED, INITIALIZED, RUNNING, STOPPED };
     SteeredWheelBaseController();
 
     // These are not real-time safe.
@@ -801,6 +802,7 @@ private:
     Eigen::MatrixX2d new_wheel_pos_;
     RealtimePublisher<nav_msgs::Odometry> odom_pub_;
     RealtimePublisher<tf::tfMessage> odom_tf_pub_;
+    // State state_;
     Time last_odom_pub_time_, last_odom_tf_pub_time_;
 };
 
@@ -833,7 +835,7 @@ const Vector2d SteeredWheelBaseController::X_DIR = Vector2d::UnitX();
 
 SteeredWheelBaseController::SteeredWheelBaseController()
 {
-    state_ = CONSTRUCTED;
+    state_ =  ControllerState::CONSTRUCTED;
 }
 
 bool SteeredWheelBaseController::initRequest(RobotHW *const robot_hw,
@@ -841,7 +843,7 @@ bool SteeredWheelBaseController::initRequest(RobotHW *const robot_hw,
         NodeHandle& ctrlr_nh,
         ClaimedResources& claimed_resources)
 {
-    if (state_ != CONSTRUCTED)
+    if (state_ !=  ControllerState::CONSTRUCTED)
     {
         ROS_ERROR("The steered-wheel base controller could not be created.");
         return false;
@@ -876,7 +878,7 @@ bool SteeredWheelBaseController::initRequest(RobotHW *const robot_hw,
     addClaimedResources(pos_joint_iface, "hardware_interface::PositionJointInterface", claimed_resources);
     addClaimedResources(vel_joint_iface, "hardware_interface::VelocityJointInterface", claimed_resources);
 
-    state_ = INITIALIZED;
+    state_ =  ControllerState::INITIALIZED;
     return true;
 }
 
