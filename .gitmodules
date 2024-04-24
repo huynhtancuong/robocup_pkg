@@ -4,11 +4,12 @@
 	branch = hydro-devel
 [submodule "youbot_driver_ros_interface"]
 	path = youbot_driver_ros_interface
-	url = git@github.com:youbot/youbot_driver_ros_interface.git
-	branch = indigo-devel
+	url = git@github.com:huynhtancuong/youbot_driver_ros_interface.git
+	branch = noetic-devel
 [submodule "youbot_nav"]
 	path = youbot_nav
-	url = git@github.com:TexnoMann/youbot_nav.git
+	url = git@github.com:huynhtancuong/youbot_nav.git
+	branch = noetic-devel
 [submodule "robotics_math"]
 	path = robotics_math
 	url = git@github.com:TexnoMann/robotics_math.git
