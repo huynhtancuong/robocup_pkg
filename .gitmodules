@@ -26,3 +26,6 @@
 	path = angles
 	url = https://github.com/ros/angles.git
 	branch = master
+[submodule "rpg_svo_pro_open"]
+	path = rpg_svo_pro_open
+	url = https://github.com/huynhtancuong/rpg_svo_pro_open.git
