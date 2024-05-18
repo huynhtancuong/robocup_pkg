@@ -1,0 +1,46 @@
+<launch>
+
+    <!-- <node name="pcl_filter" pkg="my_pcl" type="pcl_filter" output="screen"> -->
+        <!-- change the topics according to the dataset -->
+        <!-- <remap from="/pcl_input"    to="/orb_slam3/all_points"/> -->
+        <!-- <remap from="/pcl_output"    to="/head/camera1/image_raw"/> -->
+    <!-- </node> -->
+    <!-- Start a nodelet manager -->
+    <node pkg="nodelet" type="nodelet" name="pcl_all_points" args="manager" output="screen" />
+    
+
+    <!-- Run a VoxelGrid filter to clean NaNs and downsample the data -->
+    <!-- <node pkg="nodelet" type="nodelet" name="pcl_all_points_voxel_grid" args="load pcl/VoxelGrid pcl_all_points" output="screen">
+        <remap from="~input" to="svo/backend_points" />
+        <remap from="~output" to="pcl_all_points/voxel_grid/output" />
+        <rosparam>
+        filter_field_name: z
+        filter_limit_min: -3
+        filter_limit_max: 3
+        filter_limit_negative: False
+        leaf_size: 0.1
+        </rosparam>
+    </node> -->
+
+    <!-- Run a StatisticalOutlinerRemoval -->
+    <node pkg="nodelet" type="nodelet" name="pcl_all_points_statistical_outlier_removal" args="load pcl/StatisticalOutlierRemoval pcl_all_points" output="screen">
+        <remap from="~input" to="svo/backend_points" />
+        <remap from="~output" to="pcl_all_points/statistical_outlier_removal/output" />
+        <rosparam>
+        mean_k: 50
+        stddev: 0.4
+        </rosparam>
+    </node>
+
+    <!-- Run a RadiusOulierRemoval -->
+    <node pkg="nodelet" type="nodelet" name="pcl_all_points_radius_outlier_removal" args="load pcl/RadiusOutlierRemoval pcl_all_points" output="screen">
+        <remap from="~input" to="pcl_all_points/statistical_outlier_removal/output" />
+        <remap from="~output" to="pcl_all_points/output" />
+        <rosparam>
+        radius_search: 0.3
+        min_neighbors: 5
+        </rosparam>
+    </node>
+
+
+</launch>
