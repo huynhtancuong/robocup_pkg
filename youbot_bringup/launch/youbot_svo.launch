@@ -1,5 +1,8 @@
 <launch>
     <include file="$(find youbot_bringup)/launch/realsense2_rs_camera.launch"/>
-    <include file="$(find youbot_driver_ros_interface)/launch/youbot_driver.launch"/>
+    <!-- <include file="$(find youbot_driver_ros_interface)/launch/youbot_driver.launch"/> -->
     <include file="$(find svo_ros)/launch/d435i_office_stereo.launch"/>
+    <include file="$(find youbot_bringup)/launch/octomap_mapping.launch"/>
+    <include file="$(find youbot_bringup)/launch/pcl_all_points.launch"/>
+    
 </launch>

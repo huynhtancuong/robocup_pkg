@@ -25,6 +25,7 @@
 		<param name="ground_filter/plane_distance" value="0.07"/> -->
 		
 		<!-- data source to integrate (PointCloud2) -->
+		<!-- <remap from="cloud_in" to="pcl_all_points/output" /> -->
 		<remap from="cloud_in" to="pcl_all_points/output" />
 	</node>
 </launch>

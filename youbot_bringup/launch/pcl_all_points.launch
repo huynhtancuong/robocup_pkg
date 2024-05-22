@@ -10,8 +10,8 @@
     
 
     <!-- Run a VoxelGrid filter to clean NaNs and downsample the data -->
-    <!-- <node pkg="nodelet" type="nodelet" name="pcl_all_points_voxel_grid" args="load pcl/VoxelGrid pcl_all_points" output="screen">
-        <remap from="~input" to="svo/backend_points" />
+    <node pkg="nodelet" type="nodelet" name="pcl_all_points_voxel_grid" args="load pcl/VoxelGrid pcl_all_points" output="screen">
+        <remap from="~input" to="svo/pointcloud" />
         <remap from="~output" to="pcl_all_points/voxel_grid/output" />
         <rosparam>
         filter_field_name: z
@@ -20,11 +20,11 @@
         filter_limit_negative: False
         leaf_size: 0.1
         </rosparam>
-    </node> -->
+    </node>
 
     <!-- Run a StatisticalOutlinerRemoval -->
     <node pkg="nodelet" type="nodelet" name="pcl_all_points_statistical_outlier_removal" args="load pcl/StatisticalOutlierRemoval pcl_all_points" output="screen">
-        <remap from="~input" to="svo/backend_points" />
+        <remap from="~input" to="pcl_all_points/voxel_grid/output" />
         <remap from="~output" to="pcl_all_points/statistical_outlier_removal/output" />
         <rosparam>
         mean_k: 50
